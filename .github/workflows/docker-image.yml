@@ -24,4 +24,4 @@ jobs:
            docker login -u ${{ secrets.docker_hub_username }} -p ${{ secrets.docker_hub_password }}
     - name: Docker push
       run: |
-           docker push syamnarayan/syam:v1
+           docker push registry.hub.docker.com/syamnarayan/syam:v1
