@@ -17,5 +17,3 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
       run: docker images
-      run: docker login -u syamnarayan -p Saidevops$123
-    
