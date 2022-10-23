@@ -19,4 +19,6 @@ jobs:
     - name: Docker images list
       run: docker images
     - name: Docker tagging
-      run: docker tag my-image-name:latest syamnarayan:latest
+      run: |
+           docker tag my-image-name:latest syamnarayan:latest
+           docker images
