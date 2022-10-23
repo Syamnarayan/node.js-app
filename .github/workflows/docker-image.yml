@@ -18,3 +18,5 @@ jobs:
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: Docker images list
       run: docker images
+    - name: Docker tagging
+      run: docker tag my-image-name syamnarayan
