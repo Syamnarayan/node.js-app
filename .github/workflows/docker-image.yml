@@ -22,3 +22,5 @@ jobs:
       run: |
            docker tag my-image-name:latest syamnarayan:latest
            docker images
+           dockerlogin -u {{secrets.docker_hub_username}} -p {{secrets.docker_hub_password}}
+           docker push syamnarayan/github_action:latest 
