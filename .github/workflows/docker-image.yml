@@ -20,7 +20,7 @@ jobs:
       run: docker images
     - name: Docker tagging
       run: |
-           docker tag my-image-name:latest syamnarayan:latest
+           docker tag my-image-name:latest syamnarayan:v1
            docker images
            docker login -u ${{ secrets.docker_hub_username }} -p ${{ secrets.docker_hub_password }}
-           docker push syamnarayan:latest
+           docker push syamnarayan:v1
