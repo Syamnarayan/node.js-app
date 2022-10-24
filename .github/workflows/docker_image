@@ -1,4 +1,4 @@
-ame: Node.js CI
+name: docker_build
 
 on:
   push:
