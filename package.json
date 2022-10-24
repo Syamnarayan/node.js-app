@@ -8,7 +8,7 @@
         "start": "node server.js",
         "dev": "vite",
         "serve": "vite preview",
-        "test": "jest"
+        "test": "mocha"
       },
   "dependencies": {
     "express": "^4.16.1"
