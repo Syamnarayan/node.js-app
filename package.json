@@ -8,7 +8,7 @@
         "start": "node server.js",
         "dev": "vite",
         "serve": "vite preview",
-        "test": "mocha"
+        "test": "mocha --recursive --reporter mocha-junit-reporter --timeout 60000 --exit",
       },
   "dependencies": {
     "express": "^4.16.1"
