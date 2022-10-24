@@ -5,12 +5,8 @@
   "author": "First Last <first.last@example.com>",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
-  },
-  "scripts": {
-        "start": "vite",
+        "start": "node server.js",
         "dev": "vite",
-        "build": "vite build",
         "serve": "vite preview",
         "test": "echo \"Error: no test specified\" && exit 1"
       },
