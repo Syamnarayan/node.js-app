@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag syam:v1
+      run: docker build . --file Dockerfile --tag syamnarayan/kumar:v1
     - name: Docker images list
       run: docker images
     - name: Docker login
@@ -24,4 +24,4 @@ jobs:
            docker login -u ${{ secrets.docker_hub_username }} -p ${{ secrets.docker_hub_password }}
     - name: Docker push
       run: |
-           docker push registry.hub.docker.com/syamnarayan/syam:v1
+           docker push syamnarayan/kumar:v1
