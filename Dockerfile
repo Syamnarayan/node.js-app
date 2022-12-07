@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
-# This is the brief of the Docker file to maintain
+# The change was made by syam/kumar2
 
 # Bundle app source
 COPY . .
