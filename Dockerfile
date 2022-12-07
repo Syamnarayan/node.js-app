@@ -11,6 +11,7 @@ COPY package*.json ./
 RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
+# The change was made by syam/kumar2
 
 # Bundle app source
 COPY . .
