@@ -2,14 +2,16 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, dependency-review/syam  ]
   pull_request:
     branches: [ main ]
+permissions:
+ contents: read
 jobs:
   build_and_test:
 
     runs-on: ubuntu-latest
-
+    
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
@@ -30,27 +32,15 @@ jobs:
              docker login -u ${{ secrets.docker_hub_username }} -p ${{ secrets.docker_hub_password }}
       - name: Docker push
         run: |
-             docker push syamnarayan/kumar:v1          
-  deploy:
-    name: Upload to Amazon S3
-    runs-on: ubuntu-latest
-    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
-    permissions:
-      id-token: write
-      contents: read
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-       role-to-assume: arn:aws:iam::397077272423:role/OIDTgithubS3
-       role-session-name: MySessionName
-       aws-region: us-west-1
-    - name: Copy files to the test website with the AWS CLI
-      run: |
-        aws s3 sync . s3://uploadingartifacts
-    - name: Copy files to the production website with the AWS CLI
-      run: |
-        aws s3 sync . s3://uploadingartifacts
-    
+             docker push syamnarayan/kumar:v1
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v3
+      - name: Dependency Review
+        uses: actions/dependency-review-action@main
+        with:
+          fail-on-severity: moderate
+          base-ref: main
+          head-ref: main
+          deny-licenses: LGPL-2.0, BSD-2-Clause
+          
+
