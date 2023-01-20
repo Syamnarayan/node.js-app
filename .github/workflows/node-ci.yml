@@ -1,4 +1,4 @@
-name: Node.js CIhttps://github.com/Syamnarayan/node.js-app/tree/dependency-review/syam
+name: Node.js CI
 
 on:
   push:
@@ -31,4 +31,4 @@ jobs:
       - name: Docker push
         run: |
              docker push syamnarayan/kumar:v1
- ##end##.
+ ##
