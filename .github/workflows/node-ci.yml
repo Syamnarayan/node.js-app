@@ -39,5 +39,6 @@ jobs:
         uses: actions/dependency-review-action@main
         with:
           fail-on-severity: moderate
-          base-ref/head-ref: dependency-review/syam//main
+          base-ref: main
+          
 
