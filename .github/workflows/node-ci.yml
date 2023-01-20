@@ -30,27 +30,4 @@ jobs:
              docker login -u ${{ secrets.docker_hub_username }} -p ${{ secrets.docker_hub_password }}
       - name: Docker push
         run: |
-             docker push syamnarayan/kumar:v1          
-  deploy:
-    name: Upload to Amazon S3
-    runs-on: ubuntu-latest
-    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
-    permissions:
-      id-token: write
-      contents: read
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-       role-to-assume: arn:aws:iam::397077272423:role/OIDTgithubS3
-       role-session-name: MySessionName
-       aws-region: us-west-1
-    - name: Copy files to the test website with the AWS CLI
-      run: |
-        aws s3 sync . s3://uploadingartifacts
-    - name: Copy files to the production website with the AWS CLI
-      run: |
-        aws s3 sync . s3://uploadingartifacts
-## end    
+             docker push syamnarayan/kumar:v1
