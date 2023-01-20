@@ -2,7 +2,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main, dependency-review/syam ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 jobs:
