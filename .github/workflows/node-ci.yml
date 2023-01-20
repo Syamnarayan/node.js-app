@@ -41,5 +41,6 @@ jobs:
           fail-on-severity: moderate
           base-ref: main
           head-ref: main
+          deny-licenses: LGPL-2.0, BSD-2-Clause
           
 
