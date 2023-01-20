@@ -31,14 +31,3 @@ jobs:
       - name: Docker push
         run: |
              docker push syamnarayan/kumar:v1
-  Dependency_Review:
-    name: 'Dependency-Review'
-    permissions:
-      id-token: write
-      contents: read
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Checkout Repository'
-        uses: actions/checkout@v3
-      - name: Dependency Review
-        uses: actions/dependency-review-action@main
